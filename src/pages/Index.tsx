@@ -1,9 +1,9 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 
 declare global {
   interface Window {
@@ -250,9 +250,9 @@ const Index = () => {
                 DotGlasses
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">Collections</a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">Virtual Try-On</a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">About</a>
+                <Link to="/collections" className="text-gray-300 hover:text-white transition-colors">Collections</Link>
+                <Link to="/virtual-try-on" className="text-gray-300 hover:text-white transition-colors">Virtual Try-On</Link>
+                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
                 <Button className="pulse-glow">Shop Now</Button>
               </div>
             </div>
@@ -281,12 +281,16 @@ const Index = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
-                <Button size="lg" className="text-lg px-8 py-4 pulse-glow">
-                  🥽 Try Virtual Fitting
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4 glass-effect border-primary/30 text-primary hover:bg-primary/10">
-                  👁️ Explore Collection
-                </Button>
+                <Link to="/virtual-try-on">
+                  <Button size="lg" className="text-lg px-8 py-4 pulse-glow">
+                    🥽 Try Virtual Fitting
+                  </Button>
+                </Link>
+                <Link to="/collections">
+                  <Button size="lg" variant="outline" className="text-lg px-8 py-4 glass-effect border-primary/30 text-primary hover:bg-primary/10">
+                    👁️ Explore Collection
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -344,12 +348,16 @@ const Index = () => {
               </p>
               <Separator className="my-8 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="text-lg px-8 py-4 pulse-glow">
-                  🚀 Start Your Journey
-                </Button>
-                <Button size="lg" variant="ghost" className="text-lg px-8 py-4 text-primary hover:bg-primary/10">
-                  📞 Contact Us
-                </Button>
+                <Link to="/virtual-try-on">
+                  <Button size="lg" className="text-lg px-8 py-4 pulse-glow">
+                    🚀 Start Your Journey
+                  </Button>
+                </Link>
+                <Link to="/about">
+                  <Button size="lg" variant="ghost" className="text-lg px-8 py-4 text-primary hover:bg-primary/10">
+                    📞 Contact Us
+                  </Button>
+                </Link>
               </div>
             </Card>
           </div>
