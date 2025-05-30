@@ -5,44 +5,47 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Award, Users, Globe, Heart } from "lucide-react";
+import { ArrowLeft, Heart, Users, Globe, HandHeart } from "lucide-react";
 
 const About = () => {
   const stats = [
-    { label: "Happy Customers", value: "50K+", icon: "👥" },
-    { label: "Countries Served", value: "25+", icon: "🌍" },
-    { label: "Years Experience", value: "15+", icon: "⭐" },
-    { label: "Frame Designs", value: "1000+", icon: "🕶️" }
+    { label: "Lives Changed", value: "50K+", icon: "👁️" },
+    { label: "Countries Served", value: "120+", icon: "🌍" },
+    { label: "Years of Service", value: "8+", icon: "⭐" },
+    { label: "Free Glasses Given", value: "50K+", icon: "👓" }
   ];
 
   const team = [
-    { name: "Dr. Sarah Chen", role: "Founder & CEO", avatar: "👩‍💼", bio: "Visionary leader with 20+ years in optical innovation" },
-    { name: "Marcus Rodriguez", role: "Chief Designer", avatar: "👨‍🎨", bio: "Award-winning designer behind our most popular collections" },
-    { name: "Dr. James Wilson", role: "Head of R&D", avatar: "👨‍🔬", bio: "Leading researcher in AR/VR eyewear technology" },
-    { name: "Lisa Thompson", role: "Customer Experience", avatar: "👩‍💻", bio: "Ensuring every customer gets the perfect fit and experience" }
+    { name: "Dr. Sarah Chen", role: "Founder & Vision Director", avatar: "👩‍⚕️", bio: "Optometrist dedicated to global vision equality" },
+    { name: "Marcus Rodriguez", role: "Operations Manager", avatar: "👨‍💼", bio: "Coordinates global distribution and partnerships" },
+    { name: "Dr. Amara Okafor", role: "Medical Director", avatar: "👩‍⚕️", bio: "Ensures quality eye care and prescriptions" },
+    { name: "Lisa Thompson", role: "Community Outreach", avatar: "👩‍💻", bio: "Connects with communities worldwide" }
   ];
 
   const values = [
-    { title: "Innovation", description: "Pioneering the future of eyewear with cutting-edge technology", icon: "🚀" },
-    { title: "Quality", description: "Premium materials and craftsmanship in every frame we create", icon: "💎" },
-    { title: "Accessibility", description: "Making great vision accessible to everyone, everywhere", icon: "🌟" },
-    { title: "Sustainability", description: "Committed to eco-friendly practices and responsible sourcing", icon: "🌱" }
+    { title: "Accessibility", description: "Vision care should be available to everyone, regardless of financial status", icon: "🌟" },
+    { title: "Quality", description: "Free doesn't mean compromising on quality - we provide premium eyewear", icon: "💎" },
+    { title: "Dignity", description: "Everyone deserves to receive help with respect and dignity", icon: "🤝" },
+    { title: "Sustainability", description: "Building lasting partnerships to create long-term impact", icon: "🌱" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900 to-green-900">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="text-2xl font-bold text-gradient">
-              DotGlasses
+              👁️ VisionForAll
             </Link>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/collections" className="text-gray-300 hover:text-white transition-colors">Collections</Link>
-              <Link to="/virtual-try-on" className="text-gray-300 hover:text-white transition-colors">Virtual Try-On</Link>
-              <Link to="/about" className="text-white font-medium">About</Link>
-              <Button>Shop Now</Button>
+              <Link to="/collections" className="text-gray-300 hover:text-white transition-colors">Our Frames</Link>
+              <Link to="/virtual-try-on" className="text-gray-300 hover:text-white transition-colors">Get Free Glasses</Link>
+              <Link to="/about" className="text-white font-medium">Our Mission</Link>
+              <Button className="bg-gradient-to-r from-red-500 to-green-500">
+                <Heart className="w-4 h-4 mr-2" />
+                Donate
+              </Button>
             </div>
           </div>
         </div>
@@ -52,15 +55,15 @@ const About = () => {
         <div className="container mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16">
-            <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-6">
+            <Link to="/" className="inline-flex items-center text-green-400 hover:text-green-300 mb-6">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Link>
             <h1 className="text-5xl md:text-7xl font-black mb-6">
-              <span className="text-gradient">About DotGlasses</span>
+              <span className="text-gradient">Our Mission</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We're revolutionizing the eyewear industry through innovative technology, exceptional design, and unwavering commitment to our customers' vision.
+              We believe that clear vision is a basic human right. Our mission is to provide free prescription glasses to those who cannot afford them, creating a world where financial barriers never stand between someone and clear sight.
             </p>
           </div>
 
@@ -78,27 +81,27 @@ const About = () => {
           {/* Story Section */}
           <div className="grid lg:grid-cols-2 gap-12 mb-16 items-center">
             <div>
-              <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">Our Story</Badge>
+              <Badge className="mb-4 bg-red-400/20 text-red-400 border-red-400/30">Our Story</Badge>
               <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gradient">Vision Beyond Sight</span>
+                <span className="text-gradient">Vision Beyond Barriers</span>
               </h2>
               <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-                Founded in 2008, DotGlasses began with a simple mission: to make premium eyewear accessible to everyone through innovative technology. What started as a small optical shop has grown into a global leader in 3D eyewear experiences.
+                Founded in 2016, VisionForAll began when Dr. Sarah Chen witnessed countless patients leaving her clinic without glasses simply because they couldn't afford them. This sparked a mission to eliminate financial barriers to clear vision.
               </p>
               <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-                Today, we combine traditional craftsmanship with cutting-edge AR technology, allowing customers to virtually try on thousands of frames from the comfort of their homes. Our commitment to quality, innovation, and customer satisfaction drives everything we do.
+                Today, we work with eye care professionals, nonprofits, and volunteers worldwide to ensure that anyone who needs glasses can receive them at no cost. Every pair we distribute represents a life changed, a student who can learn, a worker who can provide for their family.
               </p>
-              <Button size="lg" className="pulse-glow">
+              <Button size="lg" className="pulse-glow bg-gradient-to-r from-red-500 to-green-500">
                 <Heart className="w-4 h-4 mr-2" />
                 Join Our Mission
               </Button>
             </div>
             <Card className="glass-effect p-8">
               <div className="text-center">
-                <div className="text-8xl mb-6">👁️</div>
-                <h3 className="text-2xl font-bold mb-4 text-gradient">Our Mission</h3>
+                <div className="text-8xl mb-6">❤️</div>
+                <h3 className="text-2xl font-bold mb-4 text-gradient">Our Vision</h3>
                 <p className="text-gray-300 text-lg">
-                  "To transform how the world sees eyewear by making perfect vision accessible, stylish, and personal for everyone."
+                  "A world where every person has access to clear vision, regardless of their economic circumstances."
                 </p>
               </div>
             </Card>
@@ -110,7 +113,7 @@ const About = () => {
               <h2 className="text-4xl font-bold mb-4">
                 <span className="text-gradient">Our Values</span>
               </h2>
-              <p className="text-xl text-gray-300">The principles that guide everything we do</p>
+              <p className="text-xl text-gray-300">The principles that guide our work</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
@@ -127,16 +130,16 @@ const About = () => {
           <div className="mb-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">
-                <span className="text-gradient">Meet Our Team</span>
+                <span className="text-gradient">Our Team</span>
               </h2>
-              <p className="text-xl text-gray-300">The visionaries behind DotGlasses</p>
+              <p className="text-xl text-gray-300">Dedicated professionals making vision accessible</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {team.map((member, index) => (
                 <Card key={member.name} className="glass-effect p-6 text-center hover:scale-105 transition-all duration-500" style={{animationDelay: `${index * 0.1}s`}}>
                   <div className="text-6xl mb-4">{member.avatar}</div>
                   <h3 className="text-xl font-bold mb-2 text-white">{member.name}</h3>
-                  <p className="text-primary font-medium mb-3">{member.role}</p>
+                  <p className="text-red-400 font-medium mb-3">{member.role}</p>
                   <p className="text-gray-300 text-sm">{member.bio}</p>
                 </Card>
               ))}
@@ -146,23 +149,22 @@ const About = () => {
           {/* CTA Section */}
           <Card className="glass-effect p-12 text-center">
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Experience the <span className="text-gradient">Future</span>?
+              Ready to Make a <span className="text-gradient">Difference</span>?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who've discovered their perfect vision with DotGlasses
+              Whether you need glasses or want to help others see clearly, you can be part of our mission
             </p>
-            <Separator className="my-8 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            <Separator className="my-8 bg-gradient-to-r from-transparent via-red-400/30 to-transparent" />
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/virtual-try-on">
-                <Button size="lg" className="text-lg px-8 py-4 pulse-glow">
-                  🥽 Try Virtual Fitting
+                <Button size="lg" className="text-lg px-8 py-4 pulse-glow bg-gradient-to-r from-red-500 to-green-500">
+                  👓 Get Free Glasses
                 </Button>
               </Link>
-              <Link to="/collections">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4 glass-effect border-primary/30 text-primary hover:bg-primary/10">
-                  👁️ Explore Collections
-                </Button>
-              </Link>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4 glass-effect border-green-400/30 text-green-400 hover:bg-green-400/10">
+                <HandHeart className="w-4 h-4 mr-2" />
+                Volunteer With Us
+              </Button>
             </div>
           </Card>
         </div>
